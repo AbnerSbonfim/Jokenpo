@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.bg-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1100px;
+    height: 1100px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: rotateSlow 100s linear infinite;
+}
+
+.floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+
+}
+
+.icon {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon:nth-child(1) {
+    top: 10%;
+    left: 8%;
+    animation-duration: 7s;
+}
+
+.icon:nth-child(2) {
+    top: 20%;
+    left: 85%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.icon:nth-child(3) {
+    top: 70%;
+    left: 12%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.icon:nth-child(4) {
+    top: 80%;
+    left: 80%;
+    animation-duration: 10s;
+    animation-delay: 0.5s;
+}
+
+.icon:nth-child(5) {
+    top: 45%;
+    left: 5%;
+    animation-duration: 6s;
+    animation-delay: 1.5s;
+}
+
+.icon:nth-child(6) {
+    top: 15%;
+    left: 45%;
+    animation-duration: 9s;
+    animation-delay: 2.5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-100px) rotate(200deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+
+}
+
+.bg-rotate {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.3;
+    object-fit: cover;
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 75%);
+    mask-image: radial-gradient(circle, black 40%, transparent 75%);
+    transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1100px;
+    height: 1100px;
+    transform: translate(-50%, -50%);
+    animation: rotateSlow 100s linear infinite;
+}
+
+
+@keyframes rotateSlow {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+body {
+    position: relative;
+    overflow-y: auto;
+    /* mantém, pra rolar o conteúdo do jogo se precisar */
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0a579b, #0f7c8a, #2fb7b9);
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.305);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 1px 200px;
+    margin: auto;
+
+}
+
+
+.buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 70ms ease-in-out;
+}
+
+/* Rock — vermelho */
+#Rock {
+    background-color: #ef4444;
+    box-shadow:
+        inset 0 2px 0 0 #fca5a5,
+        0 3px 0 0 #dc2626,
+        0 6px 0 0 #b91c1c,
+        0 9px 0 0 #991b1b,
+        0 9px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+#Rock:hover {
+    filter: brightness(1.2);
+}
+
+#Rock:active {
+    transform: translateY(6px);
+    box-shadow:
+        inset 0 2px 0 0 #fca5a5,
+        0 1px 0 0 #dc2626,
+        0 2px 0 0 #b91c1c,
+        0 3px 0 0 #991b1b,
+        0 3px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Paper — amarelo */
+#Paper {
+    background-color: #facc15;
+    box-shadow:
+        inset 0 2px 0 0 #fef08a,
+        0 3px 0 0 #eab308,
+        0 6px 0 0 #ca8a04,
+        0 9px 0 0 #a16207,
+        0 9px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+#Paper:hover {
+    filter: brightness(1.2);
+}
+
+#Paper:active {
+    transform: translateY(6px);
+    box-shadow:
+        inset 0 2px 0 0 #fef08a,
+        0 1px 0 0 #eab308,
+        0 2px 0 0 #ca8a04,
+        0 3px 0 0 #a16207,
+        0 3px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Scissors — azul */
+#Scissors {
+    background-color: #3b82f6;
+    box-shadow:
+        inset 0 2px 0 0 #93c5fd,
+        0 3px 0 0 #2563eb,
+        0 6px 0 0 #1d4ed8,
+        0 9px 0 0 #1e40af,
+        0 9px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+#Scissors:hover {
+    filter: brightness(1.2);
+}
+
+#Scissors:active {
+    transform: translateY(6px);
+    box-shadow:
+        inset 0 2px 0 0 #93c5fd,
+        0 1px 0 0 #2563eb,
+        0 2px 0 0 #1d4ed8,
+        0 3px 0 0 #1e40af,
+        0 3px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    pointer-events: none;
+}
+
+.result {
+    font-size: 26px;
+    color: #ebff57;
+
+    padding: 10px;
+    border-radius: 20px;
+    animation: 3s ease-in-out infinite alternate;
+    animation-name: changeText;
+}
+
+
+@keyframes changeText {
+  0% {
+    color: #ffffff;
+    transform: translateY(0);
+  }
+  50% {
+    color: #ddf87c;
+    transform: translateY(5px); 
+  }
+  100% {
+    color: hsl(66, 100%, 49%);
+    transform: translateY(0);
+  }
+}
+
+
+.your-score span {
+    color: #67b8ff;
+    background-color: rgba(0, 0, 0, 0.532);
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+.ia-score span {
+    color: rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.532);
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+#draws-score {
+    color: rgb(252, 253, 253);
+    background-color: rgba(0, 0, 0, 0.532);
+    padding: 5px 10px;
+    border-radius: 50%;
+}
