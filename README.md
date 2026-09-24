@@ -4,6 +4,14 @@ Jogo de pedra, papel e tesoura contra a IA, desenvolvido durante os estudos na *
 
 <br>
 
+<div align="center">
+  <a href="https://abnersbonfim.github.io/Jokenpo/" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=N63IU8fkvjMj&format=png&color=000000" width="80">
+  </a>
+  
+</div>
+<br>
+
 ## 🚀 Tecnologias utilizadas
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
